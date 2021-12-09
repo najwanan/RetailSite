@@ -121,14 +121,15 @@ nav li{
 /* Product Grid*/
 
 .clothesImg{
-
-   
     position: relative;
     object-fit: cover;
     height: 25rem;
+    display: block;
    
     
 }
+
+
 
 .itemWrapper{
 
@@ -140,7 +141,8 @@ nav li{
 
 .itemWrapper p, h3{
 
-  color: black
+  color: var(--clr-light);
+  
 }
 
 
@@ -159,6 +161,17 @@ nav li{
     transform: translateX(0px);
     transition: all 0.4s ease-in-out;
    
+}
+
+.itemLabel{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-color:var(--clr-dark);
+    padding: 1em;
+    width: 60%;
+    height: 20%;
+
 }
 
 
