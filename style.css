@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Cinzel:wght@400;500;600;700;800&family=Leckerli+One&family=Nanum+Myeongjo:wght@400;700&family=Raleway:wght@100;200;300&display=swap');
+
+*{
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box; 
+ 
+}
+:root{
+  --ff-primary:'Raleway';
+  --ff-secondary:'Cinzel';
+  
+  --fw-regular:200;
+  --fw-fine:100;
+  --fw-bold:400;
+  
+  
+  --clr-light:#ffffff;
+  --clr-dark:#071e22;
+  --clr-accent1:#3d5a80;
+  --clr-accent2:#98c1d9;
+  --clr-accent3:#e0fbfc;
+  --clr-accent4:#ee6c4d;
+  --clr-accent5:#293241;
+  
+  --fs-h1: 3rem;
+    --fs-h2: 1.5rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1.2rem;
+   
+}
+
+@media (min-width:800px){
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 2rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.5rem;
+        
+    }
+}
+
+body p{
+  font-family: var(--ff-primary);
+  width: 60%;
+  margin-top: 2%;
+}
+
+nav{
+  display:flex;
+  flex-direction: row;
+  align-items:center;
+  padding: 2em 2em;
+  
+}
+
+nav ul{
+  list-style:none;
+}
+
+nav li{
+  color:var(--clr-light);
+  font-size:var(--fs-h2);
+  
+}
+
+
+
+.wrapper h1{
+  font-family: var(--ff-secondary);
+  border-bottom: 1px solid var(--clr-light);
+  width: 60%;
+  font-size: 3em;
+}
+.hero{
+  height:100vh;
+  width: 100%; 
+  background: var(--clr-accent5);
+  color: var(--clr-light);
+  padding: 0 8.5%;
+}
+
+.wrapper{
+  height: 50vw;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  text-align:center;
+}
+
+.storeBox{
+  position: relative; 
+  height:600px;
+  width: 100%;
+  background: url("https://images.pexels.com/photos/1903760/pexels-photo-1903760.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: center;
+  background-attachment: fixed;
+}
+
+.logoTxt{
+  display:flex;
+  height: 5rem;
+  color: var(--clr-accent3);
+  width: 100%;
+  position: absolute;
+  top:50%;
+  margin-top: 5rem;
+  justify-content: center;
+  
+}
+
+.logoTxt h1{
+  font-size: 4rem;
+  font-family:var(--ff-secondary);
+  
+}
+
+/* Product Grid*/
+
+.clothesImg{
+
+   
+    position: relative;
+    object-fit: cover;
+    height: 25rem;
+   
+    
+}
+
+.itemWrapper{
+
+    opacity: 0;
+    transform: translateX(20px);
+    display: block;
+}
+
+
+.itemWrapper p, h3{
+
+  color: black
+}
+
+
+.clothesGrid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 25rem);
+    grid-gap: 1rem;
+    justify-content: flex-end;
+    align-items: space-between;
+   
+}
+
+.isShowing{
+    opacity: 1;
+    transform: translateX(0px);
+    transition: all 0.4s ease-in-out;
+   
+}
+
+
+/* Periscope*/
+
+.periscope{
+   
+    margin-top: 10%;
+    height:33.33%;
+    width: 100vw;
+    background-image: url(./assets/aerieOutdoor1.jpeg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+   
+}
