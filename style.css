@@ -125,10 +125,20 @@ nav li{
     object-fit: cover;
     height: 25rem;
     display: block;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
    
     
 }
 
+.itemWrapper:hover .itemLabel{
+    left:0%;
+    
+}
+
+.itemWrapper:hover .clothesImg{
+    transform: scale(1.2);
+}
 
 
 .itemWrapper{
@@ -136,6 +146,8 @@ nav li{
     opacity: 0;
     transform: translateX(20px);
     display: block;
+    overflow: hidden;
+   
 }
 
 
@@ -166,11 +178,12 @@ nav li{
 .itemLabel{
     position: absolute;
     bottom: 0px;
-    left: 0px;
+    left: -100%;
     background-color:var(--clr-dark);
     padding: 1em;
     width: 60%;
     height: 20%;
+    transition: all 0.3s ease-in-out;
 
 }
 
@@ -178,14 +191,35 @@ nav li{
 /* Periscope*/
 
 .periscope{
-   
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 10%;
-    height:33.33%;
-    width: 100vw;
+    height: 700px;
+    width: 650px;
     background-image: url(./assets/aerieOutdoor1.jpeg);
-    background-position: top center;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     background-attachment: fixed;
+    border-radius: 50%;
    
+}
+.salesTxt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+.salesTxt h1, p{
+    color: var(--clr-accent5);
+
+}
+
+
+/*footer*/
+
+footer{
+    width: 100vw;
+    height: 30vh;
+    background-color: var(--clr-accent5);
 }
