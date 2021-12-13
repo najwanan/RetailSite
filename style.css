@@ -47,25 +47,53 @@ body p{
 }
 
 nav{
+  width: 100vw;
   display:flex;
   flex-direction: row;
   align-items:center;
-  padding: 2em 2em;
+  justify-content: flex-end;
+  padding: 0;
+  position: fixed;
+  
+}
+
+nav *{
+    align-items: flex-end;
   
 }
 
 nav ul{
+  
   list-style:none;
+  display: flex;
 }
 
 nav li{
+   
+  display: inline;
   color:var(--clr-light);
-  font-size:var(--fs-h2);
+  font-size:var(--fs-body);
+  padding: 1em;
+  font-family: var(--ff-primary);
   
 }
 
+nav li:hover{
+    color: var(--clr-accent2)
+}
+
+.sidebarToggle{
+    color: var(--clr-light);
+    background-color: transparent;
+    height: 1.5rem;
+    width: 6rem;
+    font-size: var(--fs-h3);
+    border: none;
+    margin-left: .2rem;
+}
 
 
+/* Hero Page*/
 .wrapper h1{
   font-family: var(--ff-secondary);
   border-bottom: 1px solid var(--clr-light);
@@ -213,6 +241,45 @@ nav li{
 .salesTxt h1, p{
     color: var(--clr-accent5);
 
+}
+
+/*Aside*/
+
+.showSidebar{
+transform: translateX(400px);
+color: var(--clr-accent4);
+}
+
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 25%;
+  display: flex;
+  background-color: antiquewhite;
+  transition: all 0.3s linear;
+  right: 0;
+}
+
+.sidebar *{
+    margin-top: 1em;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: 10%;
+ 
+}
+.sidebar h1{
+    font-family: var(--ff-primary);
+}
+
+.closeBtn{
+   font-size: 2.3rem;
+   padding-left: .5em;
+   color: var(--clr-dark);
+   margin: 0;
 }
 
 

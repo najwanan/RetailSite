@@ -1,3 +1,6 @@
+
+
+
 $(window).scroll(function(){
     var wScroll = $(this).scrollTop();
     var i; 
@@ -24,3 +27,19 @@ $(window).scroll(function(){
 
 
   });
+
+  const toggleBtn = document.querySelector(".sidebarToggle")
+  const closeBtn = document.querySelector(".closeBtn");
+  const sidebar = document.querySelector(".sidebar")
+
+  toggleBtn.addEventListener("click", function(){
+      sidebar.classList.toggle('showSidebar');
+      console.log("this works")
+  });
+
+
+  closeBtn.addEventListener("click", function(){
+      sidebar.classList.toggle('showSidebar');
+      
+      console.log("this works too");
+  })
