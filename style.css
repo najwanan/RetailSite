@@ -99,9 +99,10 @@ nav li:hover{
   border-bottom: 1px solid var(--clr-light);
   width: 60%;
   font-size: 3em;
+  
 }
 .hero{
-  height:100vh;
+  height:25vh;
   width: 100%; 
   background: var(--clr-accent5);
   color: var(--clr-light);
@@ -109,12 +110,16 @@ nav li:hover{
 }
 
 .wrapper{
-  height: 50vw;
+  height: 50vh;
   display:flex;
   flex-direction: column;
   align-items:center;
   justify-content: center;
   text-align:center;
+}
+
+.wrapper p{
+    color: var(--clr-light);
 }
 
 .storeBox{
@@ -179,9 +184,10 @@ nav li:hover{
 }
 
 
-.itemWrapper p, h3{
+.itemWrapper p, h3, a{
 
   color: var(--clr-light);
+  width: 90%;
   
 }
 
@@ -209,7 +215,7 @@ nav li:hover{
     left: -100%;
     background-color:var(--clr-dark);
     padding: 1em;
-    width: 60%;
+    width: 65%;
     height: 20%;
     transition: all 0.3s ease-in-out;
 

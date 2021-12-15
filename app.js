@@ -13,7 +13,7 @@ $(window).scroll(function(){
 
       
         $('.clothesGrid .itemWrapper').each(function(i){
-            console.log(i);
+      
 
             setTimeout(function(){
 
@@ -30,7 +30,81 @@ $(window).scroll(function(){
 
   const toggleBtn = document.querySelector(".sidebarToggle")
   const closeBtn = document.querySelector(".closeBtn");
-  const sidebar = document.querySelector(".sidebar")
+  const sidebar = document.querySelector(".sidebar");
+  let carts = document.querySelectorAll('.addCart');
+  const cartNum = document.querySelector('.cart span')
+
+  let products = [
+      {
+          name: 'Hooded Sweater',
+          tag: 'hoodedSweater',
+          price: 60,
+          inCart: 0
+       },
+
+     {
+        name: 'Lounge Sweatshirt',
+        tag: 'loungeSweatshirt',
+        price: 45,
+        inCart: 0
+     },
+
+     {
+        name: 'Ribbed Longsleeve',
+        tag: 'ribbedLongsleeve',
+        price: 35,
+        inCart: 0
+     },
+
+     {
+        name: 'Hooded Ribbed Sweatshirt',
+        tag: 'hoodedRibbedSweatshirt',
+        price: 55,
+        inCart: 0
+     },
+
+     {
+        name: 'Boucle Sweater',
+        tag: 'boucleSweater',
+        price: 65,
+        inCart: 0
+     },
+
+     {
+        name: 'Graphic Hoodie',
+        tag: 'graphicHoodie',
+        price: 60,
+        inCart: 0
+     },
+     
+
+     {
+        name: 'Long Cardigan',
+        tag: 'longCardigan',
+        price: 75,
+        inCart: 0
+     },
+
+     {
+        name: 'Cable Sweater Vest',
+        tag: 'cableSweaterVest',
+        price: 55,
+        inCart: 0
+     },
+
+    
+
+     {
+        name: 'Terry Loungewear Set',
+        tag: 'hoodedSweater',
+        price: 95,
+        inCart: 0
+     },
+
+
+
+ ]
+
 
   toggleBtn.addEventListener("click", function(){
       sidebar.classList.toggle('showSidebar');
@@ -43,3 +117,90 @@ $(window).scroll(function(){
       
       console.log("this works too");
   })
+
+  for (let i=0; i < carts.length; i++){
+      carts[i].addEventListener('click', ()=>{
+          cartNumbers(products[i]);
+          totalCost(products[i]);
+      } )
+  }
+
+  function onLoadCartNumbers(){
+      let productNumbers = localStorage.getItem('cartNumbers');
+
+      if(productNumbers){
+          cartNum.textContent = productNumbers;
+      }
+  }
+
+  function cartNumbers(product){
+
+      
+   
+      let productNumbers = localStorage.getItem('cartNumbers');
+     
+      productNumbers = parseInt(productNumbers);
+
+      if(productNumbers){
+        localStorage.setItem('cartNumbers', productNumbers + 1);
+        cartNum.textContent = productNumbers + 1; 
+        
+        
+      } else{
+        localStorage.setItem('cartNumbers', 1);
+        cartNum.textContent = 1
+      }
+    
+
+      setItems(product);
+    
+  }
+
+  function setItems(product){
+
+    let cartItems = localStorage.getItem('productsInCart');
+    cartItems = JSON.parse(cartItems);
+    
+
+    if (cartItems !=null){
+        
+        if(cartItems[product.tag] == undefined){
+            cartItems = {
+                ...cartItems, 
+                [product.tag]: product
+            }
+        }
+
+        cartItems[product.tag].inCart += 1;
+    } else {
+     product.inCart = 1;
+     cartItems = {
+         [product.tag]: product
+       }  
+
+    }
+   
+    localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+
+  }
+
+  function totalCost(product){
+     
+      let cartTotal = localStorage.getItem('totalCost')
+
+    
+
+      if(cartTotal != null){
+        cartTotal = parseInt(cartTotal);
+          localStorage.setItem("totalCost", cartTotal + product.price);
+          console.log("The Product Price", cartTotal);
+      } else {
+          localStorage.setItem("totalCost", product.price);
+      }
+
+      
+     
+      
+  }
+
+  onLoadCartNumbers();
