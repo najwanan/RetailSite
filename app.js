@@ -33,6 +33,7 @@ $(window).scroll(function(){
   const sidebar = document.querySelector(".sidebar");
   let carts = document.querySelectorAll('.addCart');
   const cartNum = document.querySelector('.cart span')
+  let productNumbers = localStorage.getItem('cartNumbers');
 
   let products = [
       {
@@ -96,7 +97,7 @@ $(window).scroll(function(){
 
      {
         name: 'Terry Loungewear Set',
-        tag: 'hoodedSweater',
+        tag: 'terryLoungewear',
         price: 95,
         inCart: 0
      },
@@ -126,7 +127,7 @@ $(window).scroll(function(){
   }
 
   function onLoadCartNumbers(){
-      let productNumbers = localStorage.getItem('cartNumbers');
+    
 
       if(productNumbers){
           cartNum.textContent = productNumbers;
@@ -137,7 +138,7 @@ $(window).scroll(function(){
 
       
    
-      let productNumbers = localStorage.getItem('cartNumbers');
+   
      
       productNumbers = parseInt(productNumbers);
 
@@ -193,14 +194,53 @@ $(window).scroll(function(){
       if(cartTotal != null){
         cartTotal = parseInt(cartTotal);
           localStorage.setItem("totalCost", cartTotal + product.price);
-          console.log("The Product Price", cartTotal);
+         
       } else {
           localStorage.setItem("totalCost", product.price);
       }
 
-      
-     
-      
+  }
+
+  function displayCart(){
+     let cartItems = localStorage.getItem("productsInCart");
+     cartItems = JSON.parse(cartItems);
+     let productContainer = document.querySelector(".productContainer");
+   
+     if(cartItems && productContainer){
+         productContainer.innerHTML = " ";
+         Object.values(cartItems).map(item => {
+
+             productContainer.innerHTML += `
+             <div class="product">
+             <ion-icon name="trash-outline"></ion-icon>
+             <img src="./assets/${item.tag}.jpeg"></img>
+             <span>${item.name}</span>
+          
+            </div> 
+   
+            <div class= "qauntity">
+            <span>${item.inCart}</span>
+         
+         </div>
+
+         <div class= "total">
+
+         $${item.inCart * item.price}.00
+         </div>
+            
+            
+            
+            `
+
+        });
+   }
+             
+             
+            
+            
+
   }
 
   onLoadCartNumbers();
+
+  displayCart();
