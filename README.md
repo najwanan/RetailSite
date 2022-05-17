@@ -5,23 +5,22 @@
 2. [Process](#process)
     1. [Design](#design)
        1. [Requirements](#requirements)
-    3. [Build](#build)
+    2. [Build](#build)
         1. [Tech Stack](#stack)
         3. [Installation](#installation)
         4. [User Journey](#userjourney)
-5. [PostProject Wrap-up](#post)
+3. [PostProject Wrap-up](#post)
     1. [Learnings](#learnings)
     2. [Known Bugs](#bugs)
     3. [Next Features](#features)
-    4. [How to Contribute](#contribute)
-    5. [License](#license)
-7. [Acknowledgements](#ack)
+    4. [License](#license)
+4. [Acknowledgements](#ack)
 
 ## PURPOSE
 ### Overview  <a name="overview"></a>: This is an exploration of the front end of a retail site. 
 
 Please refer to the demo for sample output. 
-The live site/demo is here: https:// [insert link to live site]
+The live site/demo is here: https://najwanan.github.io/RetailSite/
 
 
 **Project Status: MVP completed**
@@ -53,16 +52,16 @@ Extra
 
 | Front-End | Back-End | Deploy |
 | --- | --- | --- |
- | ReactJS, HTML, CSS | None (used local storage) | GitHub Pages |
+ | JS, jQuery, HTML, CSS | local storage | GitHub Pages |
 
 
 
 ##### *User Journey* <a name="journey"></a>
-- User lands on page  
+- Page loads with hero image announcing featured sales
+- 
 - User browses product selection either by scroll or using menus
 - User selects product to add to cart
 - A user can    
-
         - * Checks out via log in
         - * Checks out as guest
         
@@ -84,10 +83,10 @@ I how to map out a shopping cart flow.
 
 
 #### Additional Features for future Development <a name="features"></a>
-- [ ] Incorporate Stripe API
-- [ ] Use a database to store data
+- [ ] Incorporate payment API
+- [ ] Use a BAAS instead of local storage
+- [ ] Add Authentication 
 
-#### How to Contribute <a name="Contribute"></a>
 
 #### License <a name="license"></a>
 
