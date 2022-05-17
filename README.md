@@ -17,7 +17,7 @@
 4. [Acknowledgements](#ack)
 
 ## PURPOSE
-### Overview  <a name="overview"></a>: This is an exploration of the front end of a retail site. 
+### Overview  <a name="overview"></a>: The purpose of the project is to create the front-end of a retail site and make a functional shopping cart. 
 
 Please refer to the demo for sample output. 
 The live site/demo is here: https://najwanan.github.io/RetailSite/
@@ -73,13 +73,14 @@ Extra
 
 #### Learnings from Project:<a name="learnings"></a>
 
-I how to map out a shopping cart flow.
+This project was an exploration in the features of an ecommerce store. I had to map out the shopping cart flow and use local storage to make the shopping cart page functional. I'm still working out the bugs in the project, so the user journey isn't where I want it to be yet.
 
 
 
 #### Known Bugs <a name="bugs"></a>
 - [ ] Shopping Cart feature has bug where items only show up in cart after refresh
 - [ ] Layout of Shopping Cart sidebar
+- [ ] Delete item from cart functionality has a bug. 
 
 
 #### Additional Features for future Development <a name="features"></a>
