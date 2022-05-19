@@ -31,10 +31,10 @@ The live site/demo is here: https://najwanan.github.io/RetailSite/
 
 #### Project Requirements:  <a name="requirements"></a>
 
-MVP Features 
+MVP Features for front end
 - Browse Product Page
-- Shopping Cart mechanism 
-- Check Out Flow
+- Add to Shopping Cart button
+- Shopping cart page
 
 
 Extra
@@ -79,7 +79,7 @@ This project was an exploration in the features of an ecommerce store. I had to 
 
 #### Known Bugs <a name="bugs"></a>
 - [ ] Shopping Cart feature has bug where items only show up in cart after refresh
-- [ ] Layout of Shopping Cart sidebar
+- [ ] Layout of Shopping Cart side bar
 - [ ] Delete item from cart functionality has a bug. 
 
 
